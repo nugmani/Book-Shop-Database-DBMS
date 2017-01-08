@@ -1,2 +1,2 @@
-# Database-DBMS
-Programs for Delphi 
+Development of client- srver application
+(Разработка клиент-серверного приложения)
