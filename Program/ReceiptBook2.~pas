@@ -1,0 +1,199 @@
+unit ReceiptBook2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls, Mask, DBCtrls, ExtCtrls, Grids, DBGrids, DB, ADODB;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    DBGrid1: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    Button1: TButton;
+    DBLookupComboBox1: TDBLookupComboBox;
+    Edit1: TEdit;
+    Label4: TLabel;
+    Button3: TButton;
+    Label5: TLabel;
+    Button4: TButton;
+    Label6: TLabel;
+    DBGrid2: TDBGrid;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
+    Label10: TLabel;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    DBNavigator2: TDBNavigator;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBLookupComboBox2: TDBLookupComboBox;
+    DBLookupComboBox3: TDBLookupComboBox;
+    Button6: TButton;
+    Button8: TButton;
+    Label15: TLabel;
+    Label16: TLabel;
+    Button5: TButton;
+    Edit3: TEdit;
+    Button7: TButton;
+    Button2: TButton;
+    Button9: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Edit3Change(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+uses BookShop1, DataModule, Supplier9, Books4;
+
+{$R *.dfm}
+
+procedure TForm2.Button1Click(Sender: TObject);
+var
+ s: string;
+begin
+   s:=DataModule1.ADODataSetReceiptBook.FieldByName('Number_of_receipt').AsString;
+
+     if DataModule1.ADODataSetReceiptBook.Locate('Number_of_receipt',  s,[loPartialKey]) then
+      //ADODataSetContract.Locate('Pasport_Serial', ADODataSetClient.FieldByName('Pasport_Serial').AsString) then
+   begin
+     ShowMessage('Удалить невозможно так как номер приходной накладной используется в других таблицах');
+
+   Abort;
+   end;
+end;
+procedure TForm2.Button2Click(Sender: TObject);
+begin
+Form2.Close();
+end;
+
+procedure TForm2.Edit1Change(Sender: TObject);
+var
+  S: String;
+begin
+  s:=Edit1.text;
+  if s<>'' then
+  begin
+       s:=s+'%';
+       DataModule1.ADODataSetReceiptBook.Filtered:=False;
+       DataModule1.ADODataSetReceiptBook.Filter:=' Number_of_receipt like '+ QuotedStr(s);
+
+       DataModule1.ADODataSetReceiptBook.Filtered:=True;
+
+   end
+   else
+   DataModule1.ADODataSetReceiptBook.Filtered:=False;
+
+   {  if s<>'' then
+    begin
+       s:=s+'%';
+       DataModule1.ADODataSetWarehouse.Filtered:=False;
+       DataModule1.ADODataSetWarehouse.Filter:=' Number_of_receipt like '+ QuotedStr(s);
+
+       DataModule1.ADODataSetWarehouse.Filtered:=True;
+
+   end
+   else
+   DataModule1.ADODataSetWarehouse.Filtered:=False;
+   }
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+Form9.Show();
+end;
+
+procedure TForm2.Button4Click(Sender: TObject);
+var
+ s,s1: string;
+
+ begin
+   s:=DBLookupComboBox1.Text;
+   s1:=DBEdit1.Text;
+
+     if s=''then
+      //ADODataSetContract.Locate('Pasport_Serial', ADODataSetClient.FieldByName('Pasport_Serial').AsString) then
+   begin
+     ShowMessage('Обязательные поля не заполнены');
+
+   Abort;
+   end;
+
+
+    if s1=''then
+      //ADODataSetContract.Locate('Pasport_Serial', ADODataSetClient.FieldByName('Pasport_Serial').AsString) then
+   begin
+     ShowMessage('Обязательные поля не заполнены');
+
+   Abort;
+   end;
+   end;
+procedure TForm2.Button5Click(Sender: TObject);
+var
+ s1: string;
+begin
+   s1:=DataModule1.ADODataSetReceiptBook.FieldByName('Number_of_receipt').AsString;
+
+     if DataModule1.ADODataSetReceiptBook.Locate('Number_of_receipt',  s1,[loPartialKey]) then
+      //ADODataSetContract.Locate('Pasport_Serial', ADODataSetClient.FieldByName('Pasport_Serial').AsString) then
+   begin
+     ShowMessage('Удалить невозможно так как номер приходной накладной используется в других таблицах');
+
+   Abort;
+   end;
+end;
+
+procedure TForm2.Edit3Change(Sender: TObject);
+var
+  S: String;
+begin
+  s:=Edit3.text;
+  if s<>'' then
+  begin
+       s:=s+'%';
+       DataModule1.ADODataSetWarehouse.Filtered:=False;
+       DataModule1.ADODataSetWarehouse.Filter:=' Bar_code like '+ QuotedStr(s);
+
+       DataModule1.ADODataSetWarehouse.Filtered:=True;
+   end
+   else
+   DataModule1.ADODataSetWarehouse.Filtered:=False;
+end;
+
+procedure TForm2.Button7Click(Sender: TObject);
+begin
+ DBLookupComboBox1.KeyValue:=Form9.DBEdit1.Text;
+ DBLookupComboBox2.KeyValue:=Form4.DBEdit1.Text;
+  DBLookupComboBox3.KeyValue:=DBEdit1.Text;
+
+end;
+
+procedure TForm2.Button9Click(Sender: TObject);
+begin
+Form4.Show();
+end;
+
+end.
