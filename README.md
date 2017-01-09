@@ -3,4 +3,5 @@ Development of client- server application
 
 Программный продукт «Система учета деятельности книжного магазина» предназначен для ведения учета деятельности книжного магазина.
 
-https://cloud.githubusercontent.com/assets/22240217/21758803/ed6351fc-d660-11e6-8899-c144f5e29099.jpg
+
+![lm](https://cloud.githubusercontent.com/assets/22240217/21758803/ed6351fc-d660-11e6-8899-c144f5e29099.jpg)
