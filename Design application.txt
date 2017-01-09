@@ -1,0 +1,128 @@
+                                    Главный модуль:
+procedure N9Click(Sender: TObject);-открытие формы «Приходная накладная»
+procedure N12Click(Sender: TObject); -открытие формы «Расходная накладная»
+procedure N3Click(Sender: TObject); -открытие формы «Издательства»
+procedure N4Click(Sender: TObject); -открытие формы «Рубрики»
+procedure N5Click(Sender: TObject); -открытие формы «Авторы»
+procedure N6Click(Sender: TObject); -открытие формы «Ключевое слово»
+procedure N7Click(Sender: TObject); -открытие формы «Поставщик»
+procedure N14Click(Sender: TObject); -открытие формы «Постоянный покупатель»
+procedure N15Click(Sender: TObject); -открытие формы «Склад»
+procedure N16Click(Sender: TObject); -открытие формы «Список проданных книг»
+procedure N17Click(Sender: TObject); -открытие формы «Скидка»
+procedure N18Click(Sender: TObject); -поиск по рубрике
+procedure N19Click(Sender: TObject); -поиск по ключевому слову
+procedure N13Click(Sender: TObject); -поиск по автору
+procedure N23Click(Sender: TObject); -инвентаризационный отчёт
+procedure N24Click(Sender: TObject);-  отчёт по месяцам
+procedure N110Click(Sender: TObject); отчёт по рубрике
+procedure N21Click(Sender: TObject);-выход
+Модуль авторы:
+procedure TForm7.Button1Click(Sender: TObject); -выход
+procedure TForm7.Button2Click(Sender: TObject); -невозможность удаления
+procedure TForm7.Button3Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm7.DBEdit1Change(Sender: TObject); - осуществление фильтрации по коду автора
+procedure TForm7.DBEdit2Change(Sender: TObject); - осуществление фильтрации по фамилии автора
+procedure TForm7.DBEdit3Change(Sender: TObject); - осуществление фильтрации по имени автора
+procedure TForm7.DBEdit1Change(Sender: TObject); - осуществление фильтрации по отчеству автора
+procedure TForm7.DBEdit1Change(Sender: TObject); - осуществление фильтрации по дате рождения автора
+procedure TForm7.Edit1Change(Sender: TObject); осуществление поиска по фамилии автора
+Модуль рубрика:
+procedure TForm6.Button2Click(Sender: TObject); -выход
+procedure TForm6.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm6.Button3Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm6.DBEdit1Change(Sender: TObject); - осуществление фильтрации по коду рубрики
+procedure TForm6.DBEdit1Change(Sender: TObject); - осуществление фильтрации по названию рубрики
+procedure TForm6.Edit1Change(Sender: TObject); - осуществление поиска  по названию рубрики
+Модуль поставщик:
+procedure TForm10.Button2Click(Sender: TObject); -выход
+procedure TForm10.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm10.Button3Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm10.DBEdit1Change(Sender: TObject); - осуществление фильтрации по номеру поставщика
+procedure TForm10.DBEdit2Change(Sender: TObject); - осуществление фильтрации по названию фирмы
+procedure TForm10.DBEdit3Change(Sender: TObject); - осуществление фильтрации по юридическому адресу
+procedure TForm10.DBEdit4Change(Sender: TObject); - осуществление фильтрации по фактическому адресу
+procedure TForm10.DBEdit5Change(Sender: TObject); - осуществление фильтрации по банковским реквизитам
+procedure TForm10.DBEdit6Change(Sender: TObject); - осуществление фильтрации по телефону 
+procedure TForm10.Edit1Change(Sender: TObject); - осуществление поиска по названию фирмы
+
+Модуль ключевое слово:
+procedure TForm8.Button1Click(Sender: TObject); -выход
+procedure TForm8.Button2Click(Sender: TObject); -невозможность удаления
+procedure TForm8.DBEdit1Change(Sender: TObject); - осуществление фильтрации по ключевому слову
+procedure TForm8.Edit1Change(Sender: TObject); - осуществление поиска по ключевому слову
+
+Модуль постоянный покупатель:
+procedure TForm10.Button2Click(Sender: TObject); -выход
+procedure TForm10.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm10.Button3Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm10.DBEdit1Change(Sender: TObject); - осуществление фильтрации по номеру постоянного покупателя
+procedure TForm10.DBEdit2Change(Sender: TObject); - осуществление фильтрации по фамилии  постоянного покупателя
+procedure TForm10.DBEdit3Change(Sender: TObject); - осуществление фильтрации по имени постоянного покупателя
+procedure TForm10.DBEdit4Change(Sender: TObject); - осуществление фильтрации по отчеству постоянного покупателя
+procedure TForm10.DBEdit5Change(Sender: TObject); - осуществление фильтрации по адресу постоянного покупателя
+procedure TForm10.DBEdit6Change(Sender: TObject); - осуществление фильтрации по телефону постоянного покупателя
+procedure TForm10.Edit1Change(Sender: TObject); - осуществление поиска по номеру постоянного покупателя
+procedure TForm10.Edit2Change(Sender: TObject); - осуществление поиска по фамилии постоянного покупателя
+
+Модуль скидка:
+procedure TForm13.Button2Click(Sender: TObject); -выход
+
+Модуль издательство:
+procedure TForm5.Button2Click(Sender: TObject); -выход
+procedure TForm5.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm5.Button7Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm5.DBEdit1Change(Sender: TObject); - осуществление фильтрации по коду издательства
+procedure TForm5.DBEdit2Change(Sender: TObject); - осуществление фильтрации по названию издательства
+procedure TForm5.Edit1Change(Sender: TObject); - осуществление поиска по названию издательства
+
+
+
+
+Модуль книги:
+procedure TForm4.Button2Click(Sender: TObject); -выход
+procedure TForm4.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm4.Button7Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm4.DBEdit1Change(Sender: TObject); - осуществление фильтрации по коду книги
+procedure TForm4.DBEdit2Change(Sender: TObject); - осуществление фильтрации по названию книги
+
+procedure TForm4.DBEdit3Change(Sender: TObject); - осуществление фильтрации по году публикации книги
+procedure TForm4.DBLookupComboBox1Click(Sender: TObject); - осуществление фильтрации по коду издательства
+procedure TForm4.DBLookupComboBox2Click(Sender: TObject); - осуществление фильтрации по названию рубрики
+procedure TForm4.DBLookupComboBox3Click(Sender: TObject); - осуществление фильтрации по фамилии автора
+procedure TForm4.DBLookupComboBox4Click(Sender: TObject); - осуществление фильтрации по ключевому слову
+procedure TForm4.Edit1Change(Sender: TObject); осуществление поиска по названию книги
+Модуль приходная накладная:
+procedure TForm2.Button2Click(Sender: TObject); -выход
+procedure TForm2.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm2.Button7Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm2.DBEdit1Change(Sender: TObject); - осуществление фильтрации по номеру приходной накладной
+procedure TForm2.DBEdit2Change(Sender: TObject); - осуществление фильтрации по дате
+procedure TForm2. DBLookupComboBox1Click (Sender: TObject); - осуществление фильтрации по номеру поставщика
+procedure TForm2.Edit1Change(Sender: TObject); - осуществление поиска по номеру приходной накладной
+
+Модуль склад:
+procedure TForm11.DBEdit1Change(Sender: TObject); - осуществление фильтрации по количеству
+procedure TForm11.DBEdit2Change(Sender: TObject); - осуществление фильтрации по цене закупки
+procedure TForm11.DBEdit3Change(Sender: TObject); - осуществление фильтрации по цене продажи
+procedure TForm11. DBLookupComboBox1Click (Sender: TObject); - осуществление фильтрации по шрих-коду
+procedure TForm11. DBLookupComboBox2Click (Sender: TObject); - осуществление фильтрации по номеру приходной накладной
+
+Модуль расходная накладная:
+procedure TForm3.Button2Click(Sender: TObject); -выход
+procedure TForm3.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm3.Button7Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm3.DBEdit1Change(Sender: TObject); - осуществление фильтрации по номеру расходной накладной
+procedure TForm3.DBEdit2Change(Sender: TObject); - осуществление фильтрации по дате
+procedure TForm3. DBLookupComboBox1Click (Sender: TObject); - осуществление фильтрации по номеру постоянного покупателя
+procedure TForm3. DBLookupComboBox1Click (Sender: TObject); - осуществление фильтрации по номеру размеру скидки
+procedure TForm3.Edit1Change(Sender: TObject);- ); осуществление поиска по номеру расходной накладной
+Модуль список проданных книг:
+procedure TForm12.Button2Click(Sender: TObject); -выход
+procedure TForm12.Button1Click(Sender: TObject); -невозможность удаления
+procedure TForm12.Button7Click(Sender: TObject); -кнопка записи поля в таблицу, если обязательные поля не заполнены, то выдаётся сообщение об ошибке
+procedure TForm12.DBLookupComboBox1Click(Sender: TObject); - осуществление фильтрации по штрих-коду
+procedure TForm12.DBLookupComboBox2Click(Sender: TObject); - осуществление фильтрации по номеру расходной накладной
+procedure TForm12.DBLookupComboBox3Click(Sender: TObject); ); - осуществление фильтрации по номеру приходной накладной
+procedure TForm12.DBEdit3Change(Sender: TObject); - осуществление фильтрации по количеству проданных книг
+procedure TForm12.Edit1Change(Sender: TObject); осуществление поиска по номеру расходной накладной
