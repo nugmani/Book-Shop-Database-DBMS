@@ -1,0 +1,191 @@
+SQL код
+
+Таблица «Авторы»
+
+CREATE TABLE Author (
+       Code_of_author       int NOT NULL,
+       Surname_of_author    varchar(20) NULL,
+       Name_of_author       varchar(20) NULL,
+       Fathername_of_author varchar(20) NULL,
+       Date_of_birth        datetime NULL
+)
+go
+
+
+ALTER TABLE Author
+       ADD PRIMARY KEY (Code_of_author ASC)
+Go
+
+
+Таблица «Рубрика»
+
+CREATE TABLE Rubric (
+       Code_of_rubric       int NOT NULL,
+       Name_of_rubric       varchar(20) NULL
+)
+go
+
+
+ALTER TABLE Rubric
+       ADD PRIMARY KEY (Code_of_rubric ASC)
+Go
+
+Таблица «Поставщик»
+
+CREATE TABLE Supplier (
+       Number_of_supplier   int NOT NULL,
+       Trade_name           varchar(20) NULL,
+       address_of_the_registered_office varchar(20) NULL,
+       Actual_address       varchar(20) NULL,
+       Bank_details         varchar(20) NULL,
+       Telephone_of_trade   int NULL
+)
+go
+
+
+ALTER TABLE Supplier
+       ADD PRIMARY KEY (Number_of_supplier ASC)
+go
+
+
+Таблица «Ключевое слово»
+
+CREATE TABLE Key_word (
+       Word                 char(18) NOT NULL
+)
+go
+
+
+ALTER TABLE Key_word
+       ADD PRIMARY KEY (Word ASC)
+go
+
+Таблица «Постоянный покупатель»
+
+CREATE TABLE Regular_customer (
+       Number_of_regular_customer int NOT NULL,
+       Surname_of_customer  varchar(20) NULL,
+       Name_of_customer     varchar(20) NULL,
+       Fathername_of_customer varchar(20) NULL,
+       Address_of_customer  varchar(20) NULL,
+       Telephone_of_customer int NULL
+)
+go
+
+
+ALTER TABLE Regular_customer
+       ADD PRIMARY KEY (Number_of_regular_customer ASC)
+go
+
+
+Таблица «Скидка»
+
+CREATE TABLE Sale (
+       Size_of_sale         int NOT NULL
+)
+go
+ALTER TABLE Sale
+       ADD PRIMARY KEY (Size_of_sale ASC)
+go
+
+Таблица «Издательство»
+
+CREATE TABLE Publishing_house (
+       Code_of_publishing_house int NOT NULL,
+       Name_of_publishing_house varchar(20) NULL
+)
+go
+
+
+ALTER TABLE Publishing_house
+       ADD PRIMARY KEY (Code_of_publishing_house ASC)
+go
+
+Таблица «Книги»
+
+CREATE TABLE Books (
+       Bar_code             varchar(20) NOT NULL,
+       Tittle               varchar(20) NULL,
+       year_of_publishing   int NULL,
+       Code_of_publishing_house int NULL,
+       code_of_rubric       varchar(20) NULL,
+       code_of_author       varchar(20) NULL,
+       word                 varchar(20) NULL
+)
+go
+
+
+ALTER TABLE Books
+       ADD PRIMARY KEY (Bar_code ASC)
+go
+
+Таблица «Приходная накладная»
+
+CREATE TABLE Receipt_book (
+       Number_of_receipt    int NOT NULL,
+       Date_of_receipt      datetime NULL,
+       Number_of_supplier   int NULL
+)
+go
+
+
+ALTER TABLE Receipt_book
+       ADD PRIMARY KEY (Number_of_receipt ASC)
+go
+
+Таблица «Склад»
+
+CREATE TABLE Warehouse (
+       Bar_code             varchar(20) NOT NULL,
+       Number_of_receipt    int NOT NULL,
+       Quantity             int NULL,
+       Cost_of_purchase     int NULL,
+       Cost_of_retail       int NULL
+)
+go
+
+
+ALTER TABLE Warehouse
+       ADD PRIMARY KEY (Bar_code ASC, Number_of_receipt ASC)
+go
+
+Таблица «Расходная накладная»
+
+
+CREATE TABLE Expenditure_book (
+       Number_of_expenditure int NOT NULL,
+       Date_of_expenditure  datetime NULL,
+       Number_of_regular_customer int NULL,
+       Size_of_sale         int NULL
+)
+go
+
+
+ALTER TABLE Expenditure_book
+       ADD PRIMARY KEY (Number_of_expenditure ASC)
+go
+
+
+
+ALTER TABLE Sale
+       ADD PRIMARY KEY (Size_of_sale ASC)
+go
+
+Таблица «Проданные книги»
+
+CREATE TABLE Buying_books (
+       Bar_code             varchar(20) NOT NULL,
+       Number_of_expenditure int NOT NULL,
+       Quantity_of_purchase_books int NULL,
+       Number_of_receipt    int NOT NULL
+)
+go
+
+
+ALTER TABLE Buying_books
+       ADD PRIMARY KEY (Bar_code ASC, Number_of_expenditure ASC, 
+              Number_of_receipt ASC)
+go
+
+
+
